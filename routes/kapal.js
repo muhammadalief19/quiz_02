@@ -30,8 +30,7 @@ router.get("/edit/:id", async (req, res, next) => {
   const id = req.params.id;
   let rows = await Kapal.find(id);
   res.render("kapal/update", {
-    id: id,
-    nama_alat: rows[0].nama_alat,
+    data: rows[0],
     title,
   });
 });

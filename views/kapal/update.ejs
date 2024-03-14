@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Create DPI</title>
+    <title>Create Kapal</title>
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
       rel="stylesheet"
@@ -14,24 +14,64 @@
   <body>
     <%- include("../partials/_nav") %>
     <div class="w-full py-10 flex flex-col gap-7 items-center">
-      <p class="text-3xl font-bold uppercase">Update Alat Tangkap</p>
+      <p class="text-3xl font-bold uppercase">Update Kapal</p>
       <form
-        action="/alat-tangkap/update/<%= id %>"
+        action="/kapal/update/<%= data.id_identitas_kapal %>"
         method="POST"
         class="w-1/3 flex flex-col gap-5"
       >
         <div class="w-full flex flex-col gap-2">
-          <label for="nama_alat" class="font-semibold capitalize">
-            Nama Alat Tangkap
+          <label for="nama_kapal" class="font-semibold capitalize">
+            Nama Kapal
           </label>
           <input
             autocomplete="off"
-            id="nama_alat"
-            name="nama_alat"
+            id="nama_kapal"
+            name="nama_kapal"
             type="text"
             placeholder="Type here"
             class="input input-bordered w-full"
-            value="<%= nama_alat %>"
+            value="<%= data.nama_kapal %>"
+          />
+        </div>
+        <div class="w-full flex flex-col gap-2">
+          <label for="id_pemilik" class="font-semibold capitalize">
+            Pemilik
+          </label>
+          <input
+            autocomplete="off"
+            id="id_pemilik"
+            name="id_pemilik"
+            type="text"
+            placeholder="Type here"
+            class="input input-bordered w-full"
+            value="<%= data.id_pemilik %>"
+          />
+        </div>
+        <div class="w-full flex flex-col gap-2">
+          <label for="id_dpi" class="font-semibold capitalize"> DPI </label>
+          <input
+            autocomplete="off"
+            id="id_dpi"
+            name="id_dpi"
+            type="text"
+            placeholder="Type here"
+            class="input input-bordered w-full"
+            value="<%= data.id_dpi %>"
+          />
+        </div>
+        <div class="w-full flex flex-col gap-2">
+          <label for="id_alat" class="font-semibold capitalize">
+            Alat Tangkap
+          </label>
+          <input
+            autocomplete="off"
+            id="id_alat"
+            name="id_alat"
+            type="text"
+            placeholder="Type here"
+            class="input input-bordered w-full"
+            value="<%= data.id_alat %>"
           />
         </div>
         <div class="w-full">

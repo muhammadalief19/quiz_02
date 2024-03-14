@@ -4,7 +4,7 @@ class Kapal {
   static async getAll() {
     return new Promise((resolve, reject) => {
       connection.query(
-        "SELECT kapal.*, alat_tangkap.*, dpi.*, kapal.* FROM kapal JOIN alat_tangkap ON kapal.id_alat = alat_tangkap.id_alat JOIN pemilik ON kapal.id_pemilik = pemilik.id_pemilik JOIN dpi ON kapal.id_dpi = dpi.id_dpi",
+        "SELECT kapal.*, alat_tangkap.*, dpi.*, pemilik.* FROM kapal JOIN alat_tangkap ON kapal.id_alat = alat_tangkap.id_alat JOIN pemilik ON kapal.id_pemilik = pemilik.id_pemilik JOIN dpi ON kapal.id_dpi = dpi.id_dpi",
         (err, rows) => {
           if (err) {
             reject(err);
@@ -31,7 +31,7 @@ class Kapal {
   static async find(id) {
     return new Promise((resolve, reject) => {
       connection.query(
-        "SELECT kapal.*, alat_tangkap.*, dpi.*, kapal.* FROM kapal JOIN alat_tangkap ON kapal.id_alat = alat_tangkap.id_alat JOIN pemilik ON kapal.id_pemilik = pemilik.id_pemilik JOIN dpi ON kapal.id_dpi = dpi.id_dpi WHERE id_identitas_kapal = " +
+        "SELECT kapal.*, alat_tangkap.*, dpi.*, pemilik.* FROM kapal JOIN alat_tangkap ON kapal.id_alat = alat_tangkap.id_alat JOIN pemilik ON kapal.id_pemilik = pemilik.id_pemilik JOIN dpi ON kapal.id_dpi = dpi.id_dpi WHERE id_identitas_kapal = " +
           id,
         (err, rows) => {
           if (err) {

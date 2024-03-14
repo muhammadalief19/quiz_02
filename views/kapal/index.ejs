@@ -32,7 +32,7 @@
         <span><%- messages.success %></span>
       </div>
       <% } %>
-      <p class="text-3xl font-bold uppercase">Daftar Alat Tangkap</p>
+      <p class="text-3xl font-bold uppercase">Daftar Kapal</p>
       <div class="w-[90%] flex flex-col gap-5">
         <div class="w-full flex justify-end">
           <a href="/kapal/create" class="">
@@ -63,12 +63,12 @@
                 <td class="capitalize"><%= data[i].nama_alat %></td>
                 <td class="flex gap-4">
                   <a
-                    href="/alat-tangkap/edit/<%= data[i].id_alat %>"
+                    href="/kapal/edit/<%= data[i].id_identitas_kapal %>"
                     class="btn btn-sm btn-warning"
                     >Edit</a
                   >
                   <a
-                    href="/alat-tangkap/delete/<%= data[i].id_alat %>"
+                    href="/kapal/delete/<%= data[i].id_identitas_kapal %>"
                     class="btn btn-sm btn-error"
                     >Delete</a
                   >

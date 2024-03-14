@@ -44,6 +44,7 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/pemilik", pemilikRouter);
 app.use("/alat-tangkap", alatTangkapRouter);
+app.use("/dpi", dpiRouter);
 app.use("/kapal", kapalRouter);
 
 // catch 404 and forward to error handler
