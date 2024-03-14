@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="night">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%= title %></title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <%- include("../partials/_nav") %>
+    <div class="w-full py-10 flex flex-col gap-7 items-center">
+      <% if(messages.success) { %>
+      <div role="alert" class="alert alert-success w-1/2">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="stroke-current shrink-0 h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
+        <span><%- messages.success %></span>
+      </div>
+      <% } %>
+      <p class="text-3xl font-bold uppercase">Daftar DPI</p>
+      <div class="w-[90%] flex flex-col gap-5">
+        <div class="w-full flex justify-end">
+          <a href="/dpi/create" class="">
+            <button class="btn btn-md btn-success">Create</button>
+          </a>
+        </div>
+        <!-- table -->
+        <div class="overflow-x-auto w-full">
+          <table class="table table-zebra">
+            <!-- head -->
+            <thead>
+              <tr>
+                <th></th>
+                <th>Nama</th>
+                <th>Luas</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for(var i = 0; i < data.length; i++){ %>
+              <tr>
+                <th><%- (i+1) %></th>
+                <td class="capitalize"><%= data[i].nama_dpi %></td>
+                <td class="capitalize"><%= data[i].luas_dpi %></td>
+                <td class="flex gap-4">
+                  <a
+                    href="/dpi/edit/<%= data[i].id_dpi %>"
+                    class="btn btn-sm btn-warning"
+                    >Edit</a
+                  >
+                  <a
+                    href="/dpi/delete/<%= data[i].id_dpi %>"
+                    class="btn btn-sm btn-error"
+                    >Delete</a
+                  >
+                </td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
