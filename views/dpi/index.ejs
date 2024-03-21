@@ -1,80 +1,83 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="night">
+<html lang="zxx">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title><%= title %></title>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="MobileOptimized" content="320" />
+    <!--Start Style -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/fonts.css" />
     <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
       rel="stylesheet"
       type="text/css"
+      href="/assets/css/bootstrap.min.css"
     />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/assets/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="/assets/css/icofont.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+    <link rel="stylesheet" id="theme-change" type="text/css" href="#" />
+    <!-- Favicon Link -->
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="/assets/images/favicon.png"
+    />
   </head>
+
   <body>
-    <%- include("../partials/_nav") %>
-    <div class="w-full py-10 flex flex-col gap-7 items-center">
-      <% if(messages.success) { %>
-      <div role="alert" class="alert alert-success w-1/2">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="stroke-current shrink-0 h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-          />
-        </svg>
-        <span><%- messages.success %></span>
+    <div class="loader">
+      <div class="spinner">
+        <img src="/assets/images/loader.gif" alt="" />
       </div>
-      <% } %>
-      <p class="text-3xl font-bold uppercase">Daftar DPI</p>
-      <div class="w-[90%] flex flex-col gap-5">
-        <div class="w-full flex justify-end">
-          <a href="/dpi/create" class="">
-            <button class="btn btn-md btn-success">Create</button>
-          </a>
-        </div>
-        <!-- table -->
-        <div class="overflow-x-auto w-full">
-          <table class="table table-zebra">
-            <!-- head -->
-            <thead>
-              <tr>
-                <th></th>
-                <th>Nama</th>
-                <th>Luas</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% for(var i = 0; i < data.length; i++){ %>
-              <tr>
-                <th><%- (i+1) %></th>
-                <td class="capitalize"><%= data[i].nama_dpi %></td>
-                <td class="capitalize"><%= data[i].luas_dpi %></td>
-                <td class="flex gap-4">
-                  <a
-                    href="/dpi/edit/<%= data[i].id_dpi %>"
-                    class="btn btn-sm btn-warning"
-                    >Edit</a
-                  >
-                  <a
-                    href="/dpi/delete/<%= data[i].id_dpi %>"
-                    class="btn btn-sm btn-error"
-                    >Delete</a
-                  >
-                </td>
-              </tr>
-              <% } %>
-            </tbody>
-          </table>
+    </div>
+    <!-- Main Body -->
+    <div class="page-wrapper">
+      <!-- Header Start -->
+      <%- include("../partials/_header") %>
+      <!-- Sidebar Start -->
+      <%- include("../partials/_sidebar") %>
+      <!-- Sidebar End -->
+
+      <!-- Container Start -->
+      <div class="page-wrapper">
+        <div class="main-content">
+          <!-- Page Title Start -->
+          <div class="row">
+            <div class="colxl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+              <div class="page-title-wrapper">
+                <div class="page-title-box">
+                  <h4 class="page-title bold"><%= title %></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ad-footer-btm">
+            <p>Copyright 2024 © JI BAKRIE.</p>
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- Script Start -->
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/popper.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/swiper.min.js"></script>
+    <script src="/assets/js/apexchart/apexcharts.min.js"></script>
+    <script src="/assets/js/apexchart/control-chart-apexcharts.js"></script>
+    <!-- Page Specific -->
+    <script src="/assets/js/nice-select.min.js"></script>
+    <!-- Custom Script -->
+    <script src="/assets/js/custom.js"></script>
   </body>
+
+  <!-- Mirrored from kamleshyadav.com/html/splashdash/html/b5/light/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 21 Mar 2024 01:46:17 GMT -->
 </html>

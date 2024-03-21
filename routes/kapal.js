@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Kapal = require("../model/kapal");
 
-let title = "kapal";
+let title = "Kapal";
 
 router.get("/", async (req, res, next) => {
   let rows = await Kapal.getAll();

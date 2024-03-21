@@ -13,6 +13,7 @@ var kapalRouter = require("./routes/kapal");
 
 var flash = require("express-flash");
 var session = require("express-session");
+const MemoryStore = require("session-memory-store")(session);
 
 var app = express();
 
@@ -29,11 +30,14 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(
   session({
     cookie: {
-      maxAge: 6000,
+      maxAge: 60000000000,
+      secure: false,
+      httpOnly: true,
+      sameSite: "strict",
     },
-    store: new session.MemoryStore(),
+    store: new MemoryStore(),
     saveUninitialized: true,
-    resave: "true",
+    resave: "false",
     secret: "secret",
   })
 );
