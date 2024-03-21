@@ -59,6 +59,59 @@
             </div>
           </div>
 
+          <div class="row">
+            <div class="card table-card">
+              <div
+                class="card-header pb-0"
+                style="display: flex; justify-content: end"
+              >
+                <a
+                  href="/dpi/create"
+                  class="effect-btn squer-btn sm-btn btn btn-primary mt-2 mr-2"
+                >
+                  <i class="fas fa-plus mr-2"></i>Create
+                </a>
+              </div>
+              <div class="card-body">
+                <div class="chart-holder">
+                  <div class="table-responsive">
+                    <table class="table mb-0">
+                      <thead class="thead-dark">
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Nama</th>
+                          <th scope="col">Luas</th>
+                          <th scope="col">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <% for(var i = 0; i < data.length; i++){ %>
+                        <tr>
+                          <th scope="row"><%- (i+1) %></th>
+                          <td class="capitalize"><%= data[i].nama_dpi %></td>
+                          <td class="capitalize"><%= data[i].luas_dpi %> M²</td>
+                          <td class="flex gap-4">
+                            <a
+                              href="/dpi/edit/<%= data[i].id_dpi %>"
+                              class="btn btn-warning squer-btn mt-2 mr-2"
+                              >Edit</a
+                            >
+                            <a
+                              href="/dpi/delete/<%= data[i].id_dpi %>"
+                              class="btn btn-danger squer-btn mt-2 mr-2"
+                              >Delete</a
+                            >
+                          </td>
+                        </tr>
+                        <% } %>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="ad-footer-btm">
             <p>Copyright 2024 © JI BAKRIE.</p>
           </div>
