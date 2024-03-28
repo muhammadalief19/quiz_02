@@ -8,10 +8,10 @@ router.get("/", async function (req, res, next) {
     let id = req.session.userId;
     let data = await User.find(id);
     if (data.length > 0) {
-      if (data[0].level_users != 2) {
+      if (data[0].level_users != 1) {
         res.redirect("/logout");
       } else {
-        res.render("users/index", {
+        res.render("users/super", {
           title: "Users",
           email: data[0].email,
         });

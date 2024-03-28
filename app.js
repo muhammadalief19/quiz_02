@@ -10,6 +10,7 @@ var pemilikRouter = require("./routes/pemilik");
 var alatTangkapRouter = require("./routes/alat-tangkap");
 var dpiRouter = require("./routes/dpi");
 var kapalRouter = require("./routes/kapal");
+var superUsersRouters = require("./routes/superusers");
 
 var flash = require("express-flash");
 var session = require("express-session");
@@ -46,6 +47,7 @@ app.use(flash());
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+app.use("/superusers", superUsersRouters);
 app.use("/pemilik", pemilikRouter);
 app.use("/alat-tangkap", alatTangkapRouter);
 app.use("/dpi", dpiRouter);
