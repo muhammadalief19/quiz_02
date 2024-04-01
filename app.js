@@ -10,6 +10,7 @@ var pemilikRouter = require("./routes/pemilik");
 var alatTangkapRouter = require("./routes/alat-tangkap");
 var dpiRouter = require("./routes/dpi");
 var kapalRouter = require("./routes/kapal");
+var produkRouter = require("./routes/produk");
 var superUsersRouters = require("./routes/superusers");
 
 var flash = require("express-flash");
@@ -52,6 +53,7 @@ app.use("/pemilik", pemilikRouter);
 app.use("/alat-tangkap", alatTangkapRouter);
 app.use("/dpi", dpiRouter);
 app.use("/kapal", kapalRouter);
+app.use("/produk", produkRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <title><%= title %></title>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="MobileOptimized" content="320" />
+    <!--Start Style -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/fonts.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/assets/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/assets/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="/assets/css/icofont.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+    <link rel="stylesheet" id="theme-change" type="text/css" href="#" />
+    <!-- Favicon Link -->
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="/assets/images/favicon.png"
+    />
+  </head>
+
+  <body>
+    <div class="loader">
+      <div class="spinner">
+        <img src="/assets/images/loader.gif" alt="" />
+      </div>
+    </div>
+    <!-- Main Body -->
+    <div class="page-wrapper">
+      <!-- Header Start -->
+      <%- include("../partials/_header") %>
+      <!-- Sidebar Start -->
+      <%- include("../partials/_sidebar") %>
+      <!-- Sidebar End -->
+
+      <!-- Container Start -->
+      <div class="page-wrapper">
+        <div class="main-content">
+          <!-- Page Title Start -->
+          <div class="row">
+            <div class="colxl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+              <div class="page-title-wrapper">
+                <div class="page-title-box">
+                  <h4 class="page-title bold"><%= title %></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="card">
+              <div class="card-header">
+                <h4>Create Produk</h4>
+              </div>
+              <div class="card-body">
+                <form
+                  method="POST"
+                  action="/produk/store"
+                  enctype="multipart/form-data"
+                >
+                  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="form-group">
+                      <label class="col-form-label">Nama Produk</label>
+                      <input
+                        class="form-control"
+                        type="text"
+                        placeholder="example"
+                        name="nama_produk"
+                        autocomplete="off"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label class="col-form-label">Harga Produk</label>
+                      <input
+                        class="form-control"
+                        type="text"
+                        placeholder="xxxxxx"
+                        name="harga_produk"
+                        autocomplete="off"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="pemilik" class="col-form-label"
+                        >Pemilik</label
+                      >
+                      <select
+                        class="select2 form-control select-opt"
+                        id="pemilik"
+                        name="id_pemilik"
+                      >
+                        <option value="">Pilih Pemilik</option>
+                        <% for(var i = 0; i < pemilik.length; i++){ %>
+                        <option value="<%= pemilik[i].id_pemilik %>">
+                          <%= pemilik[i].nama_pemilik %>
+                        </option>
+                        <% } %>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="formFile" class="col-form-label"
+                        >Foto Produk</label
+                      >
+                      <input
+                        class="form-control"
+                        type="file"
+                        id="formFile"
+                        name="foto_produk"
+                      />
+                    </div>
+                    <div class="form-group mb-0">
+                      <button class="btn btn-success" type="submit">
+                        create
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <%- include('../partials/_footer') %>
+        </div>
+      </div>
+    </div>
+
+    <!-- Script Start -->
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/popper.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/swiper.min.js"></script>
+    <script src="/assets/js/apexchart/apexcharts.min.js"></script>
+    <script src="/assets/js/apexchart/control-chart-apexcharts.js"></script>
+    <!-- Page Specific -->
+    <script src="/assets/js/nice-select.min.js"></script>
+    <!-- Custom Script -->
+    <script src="/assets/js/custom.js"></script>
+  </body>
+
+  <!-- Mirrored from kamleshyadav.com/html/splashdash/html/b5/light/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 21 Mar 2024 01:46:17 GMT -->
+</html>
